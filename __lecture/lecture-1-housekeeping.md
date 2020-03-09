@@ -11,6 +11,20 @@ Check the render method of `App`.
 in SomeComponent (at src/index.js:24)
 in App (at src/index.js:31)
 ```
+Example:
+
+```js
+const items = [
+  { id: '123', text: "Item 1" },
+  { id: '456', text: 'item 2' }
+]
+
+const Bacon = ({ items }) => (
+  {items.map(item => <li key={`id${item.text.replace(' ', '-')}`}>{item.text}
+  </li<)}
+);
+
+```
 
 ---
 
@@ -69,7 +83,7 @@ const data = { hi: 5 };
 
 export default data;
 ```
-
+status: a-ok
 ```js
 // src/index.js
 import theBestData from './data';
@@ -84,7 +98,7 @@ export const MAGIC_NUMBER = 123;
 
 ```js
 // src/index.js
-import MAGIC_NUMBER from './data';
+import { MAGIC_NUMBER } from './data';
 ```
 
 ---
@@ -98,6 +112,7 @@ const data = { users, sessions };
 
 export default data;
 ```
+Overkill; either export individually or export default at the end. If you're gonna export, export don't talk.
 
 ```js
 // src/index.js

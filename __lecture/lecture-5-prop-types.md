@@ -198,4 +198,6 @@ PropTypes help you catch potential type-related bugs.
 
 Are there any other benefits?
 
+Readability!!
+
 ---
